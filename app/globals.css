@@ -129,3 +129,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.bg {
+  background: linear-gradient(
+    to right,
+    rgba(124, 58, 237, 0.1),
+    rgba(15, 23, 42, 0.3)
+  );
+}
