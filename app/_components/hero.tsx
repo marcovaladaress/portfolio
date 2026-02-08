@@ -28,7 +28,7 @@ const Hero = () => {
   return (
     <>
       <div className="px-5 pt-11 md:container md:mx-auto md:px-0 md:pt-6">
-        <div className="md:mt-12 md:ml-15 md:flex md:flex-col md:gap-15">
+        <div className="md:mt-12 px-5 md:flex md:flex-col md:gap-15">
           <div className="space-y-5">
             <div>
               <Badge className="flex items-center gap-1 border border-[#8B5CF6/2] bg-[#291948] px-5 py-1 text-[#8B5CF6]">
@@ -57,7 +57,9 @@ const Hero = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-medium">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.subtitle}</p>
+                  <p className="text-muted-foreground text-sm">
+                    {item.subtitle}
+                  </p>
                 </div>
               </div>
             ))}
@@ -81,22 +83,17 @@ const Hero = () => {
                 </Card>
               ))}
             </div>
-
           </div>
-          <div className="mt-12 flex flex-col gap-5 md:flex-row  md:mt-2">
+          <div className="mt-12 flex flex-col gap-5 md:mt-2 md:flex-row">
             <Button className="w-full md:w-auto">
               <span>Ver Competências</span>
             </Button>
-            <Button variant="outline" className=" w-full md:w-auto">
+            <Button variant="outline" className="w-full md:w-auto">
               <span>Entre em contato</span>
             </Button>
           </div>
-
-
-
         </div>
       </div>
-
     </>
   );
 };
