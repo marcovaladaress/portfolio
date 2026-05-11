@@ -1,87 +1,80 @@
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { IoDesktop } from "react-icons/io5";
-import { CgDatabase } from "react-icons/cg";
-import { FaCloud, FaDatabase } from "react-icons/fa";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import {
+  BiLogoReact,
+  BiLogoTypescript,
+  BiLogoPostgresql,
+} from "react-icons/bi";
+import { SiDrizzle, SiPrisma, SiMongodb } from "react-icons/si";
+import { FaAws, FaDocker, FaNodeJs, FaGitAlt } from "react-icons/fa";
 
-const metadata = [
+const stack = [
   {
-    title: "Front-end",
-    subtitleone: "Nextjs | React",
-    descriptionone:
-      "Aplicações performáticas, SEO otimizado e estrutura moderna",
-    subtitletwo: "TypeScript ",
-    descriptiontwo: "Código robusto, escalável e com menos erros",
-    subtitletree: "Tailwind CSS",
-    descriptiontree: "Estilos rápidos, responsivos e personalizados",
-    icon: IoDesktop,
+    category: "Frontend",
+    items: [
+      { icon: RiNextjsFill, name: "Next.js" },
+      { icon: BiLogoReact, name: "React" },
+      { icon: BiLogoTypescript, name: "TypeScript" },
+      { icon: RiTailwindCssFill, name: "Tailwind CSS" },
+    ],
   },
   {
-    title: "Back-end",
-    subtitleone: "Nodejs",
-    descriptionone: "APIs rápidas, escaláveis e eficientes",
-    subtitletwo: "Banco de Dados",
-    descriptiontwo: "Modelagem e consultas otimizadas para desempenho",
-    subtitletree: "Autenticação e Segurança",
-    descriptiontree: "Proteção de dados e controle de acesso",
-    icon: CgDatabase,
+    category: "Backend",
+    items: [
+      { icon: FaNodeJs, name: "Node.js" },
+      { icon: SiDrizzle, name: "Drizzle ORM" },
+      { icon: SiPrisma, name: "Prisma" },
+    ],
   },
   {
-    title: "Banco de Dados",
-    subtitleone: "PostgreSQL & NeonDB",
-    descriptionone: "Modelagem de dados, integridade e otimização de queries",
-    subtitletwo: "MongoDB",
-    descriptiontwo: "Dados não estruturados e flexibilidade de schema",
-    subtitletree: "Administração e Backup",
-    descriptiontree: "Gerenciamento eficiente e segurança dos dados",
-    icon: FaDatabase,
+    category: "Banco de Dados",
+    items: [
+      { icon: BiLogoPostgresql, name: "PostgreSQL" },
+      { icon: SiMongodb, name: "MongoDB" },
+    ],
   },
   {
-    title: "Infraestrutura",
-    subtitleone: "AWS S3",
-    descriptionone: "Armazenamento seguro de arquivos sensíveis e backups",
-    subtitletwo: "Docker",
-    descriptiontwo: "Ambientes isolados, consistentes e portáteis",
-    subtitletree: "Git & GitHub",
-    descriptiontree: "Versionamento semântico e fluxo de trabalho profissional",
-    icon: FaCloud,
+    category: "Infraestrutura",
+    items: [
+      { icon: FaAws, name: "AWS S3" },
+      { icon: FaDocker, name: "Docker" },
+      { icon: FaGitAlt, name: "Git" },
+    ],
   },
 ];
+
 const Stacks = () => {
   return (
-    <div className="md:container md:mx-auto">
-      <div className="pt-10 text-center md:pt-25">
-        <h1 className="text-2xl">Habilidades Técnicas Reais</h1>
-        <p className="text-muted-foreground text-sm">
-          O que eu faço com cada tecnologia
+    <section id="stack" className="container mx-auto px-5 py-20">
+      <div className="space-y-3 mb-12">
+        <p className="text-xs uppercase tracking-widest text-muted-foreground">
+          Stack
         </p>
+        <h2 className="text-3xl font-bold tracking-tight">
+          Tecnologias que uso em produção
+        </h2>
       </div>
-      <div className="mt-10 flex flex-col gap-5 px-5 md:grid md:grid-cols-2">
-        {metadata.map((item, index) => (
-          <div key={index}>
-            <Card className="bg-primary/4">
-              <CardTitle className="flex flex-row items-center gap-2 px-3">
-                <item.icon size={20} className="text-primary" />
-                <h2 className="text-lg font-semibold">{item.title}</h2>
-              </CardTitle>
-              <CardContent className="flex flex-col gap-4">
-                <div className="border-primary/70 border-l-2 p-2">
-                  <h3>{item.subtitleone}</h3>
-                  <p className="mt-1 text-sm">{item.descriptionone}</p>
-                </div>
-                <div className="border-primary/70 border-l-2 p-2">
-                  <h3>{item.subtitletwo}</h3>
-                  <p className="mt-1 text-sm">{item.descriptiontwo}</p>
-                </div>
-                <div className="border-primary/70 border-l-2 p-2">
-                  <h3>{item.subtitletree}</h3>
-                  <p className="mt-1 text-sm">{item.descriptiontree}</p>
-                </div>
-              </CardContent>
-            </Card>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {stack.map((group) => (
+          <div key={group.category} className="space-y-3">
+            <p className="text-xs uppercase tracking-widest text-muted-foreground">
+              {group.category}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {group.items.map((tech) => (
+                <span
+                  key={tech.name}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-card text-sm"
+                >
+                  <tech.icon className="h-4 w-4" />
+                  {tech.name}
+                </span>
+              ))}
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

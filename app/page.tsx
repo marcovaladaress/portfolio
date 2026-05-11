@@ -1,32 +1,23 @@
-import { Separator } from "@/components/ui/separator";
-import Header from "./_components/header";
+import Navbar from "./_components/navbar";
 import Hero from "./_components/hero";
-import Deliver from "./_components/deliver";
-import Stacks from "./_components/stacks";
-import { ShineBorderDemo } from "./_components/ShineBorder";
+import About from "./_components/about";
 import Projects from "./_components/projects";
+import Stacks from "./_components/stacks";
+import CTA from "./_components/cta";
+import Footer from "./_components/footer";
 
 export default function Home() {
   return (
     <>
-      <header className="bg">
-        <Header />
-      </header>
-      <Separator />
+      <Navbar />
       <main>
-        <section className="bg">
-          <Hero />
-        </section>
-        <section className="bg">
-          <Deliver />
-        </section>
-        <section className="bg">
-          <Stacks />
-        </section>
-        <section className="bg pt-10">
-          <Projects />
-        </section>
+        <Hero />
+        <About />
+        <Projects />
+        <Stacks />
+        <CTA />
       </main>
+      <Footer />
     </>
   );
 }
