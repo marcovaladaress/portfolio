@@ -62,7 +62,7 @@ const items = [
         className="h-full w-full rounded-xl object-cover"
       />
     ),
-    link: "https://marcovaladaress.github.io/NFT-Project/",
+    link: "https://marcovaladaress.github.io/NFTLanding/",
   },
   {
     title: "Quantech",
