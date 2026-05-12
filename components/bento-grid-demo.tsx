@@ -40,7 +40,7 @@ const items = [
       "Projeto de estudo focado em uma interface moderna, minimalista e responsiva.",
     header: (
       <Image
-        src="/webAi.png"
+        src="/Wb.png"
         alt="WebAI"
         width={500}
         height={300}
