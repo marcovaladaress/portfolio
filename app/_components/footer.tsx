@@ -10,14 +10,14 @@ const Footer = () => {
         </p>
         <div className="flex items-center gap-4">
           <Link
-            href="https://github.com/marcovaladares"
+            href="https://github.com/marcovaladaress"
             target="_blank"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <Github className="h-4 w-4" />
           </Link>
           <Link
-            href="https://linkedin.com/in/marco-valadares"
+            href="https://www.linkedin.com/in/marcoaureliovaladares/"
             target="_blank"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >

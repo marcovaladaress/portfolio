@@ -56,7 +56,7 @@ const Navbar = () => {
 
           <div className="hidden md:block">
             <Button asChild size="sm">
-              <Link href="#contact">Falar comigo</Link>
+              <Link href="#contact">Entrar em contato</Link>
             </Button>
           </div>
 

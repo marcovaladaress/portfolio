@@ -1,3 +1,4 @@
+import BentoGridDemo from "@/components/bento-grid-demo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,8 +23,8 @@ const docjuriStack = [
 const Projects = () => {
   return (
     <section id="projects" className="container mx-auto px-5 py-20">
-      <div className="space-y-3 mb-12">
-        <p className="text-xs uppercase tracking-widest text-muted-foreground">
+      <div className="mb-12 space-y-3">
+        <p className="text-muted-foreground text-xs tracking-widest uppercase">
           Projetos
         </p>
         <h2 className="text-3xl font-bold tracking-tight">
@@ -33,25 +34,25 @@ const Projects = () => {
 
       {/* DocJuri — Featured */}
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
+        <p className="text-muted-foreground mb-4 text-xs tracking-widest uppercase">
           Projeto em destaque
         </p>
         <Card className="relative overflow-hidden">
           <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#A07CFE"]} />
           <CardContent className="p-6 md:p-8">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="relative aspect-video rounded-lg overflow-hidden">
+            <div className="grid items-center gap-8 md:grid-cols-2">
+              <div className="relative aspect-video overflow-hidden rounded-lg">
                 <Image
-                  src="/docjuri.png"
+                  src="/docjuri-login.png"
                   alt="DocJuri — plataforma jurídica SaaS"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="space-y-4">
-                <div className="flex items-center gap-3 flex-wrap">
+                <div className="flex flex-wrap items-center gap-3">
                   <h2 className="text-2xl font-bold">DocJuri</h2>
-                  <Badge className="bg-green-500/10 text-green-400 border border-green-500/20">
+                  <Badge className="border border-green-500/20 bg-green-500/10 text-green-400">
                     Em produção · Cliente ativo
                   </Badge>
                 </div>
@@ -72,7 +73,7 @@ const Projects = () => {
                   {docjuriStack.map((tech) => (
                     <span
                       key={tech.name}
-                      className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-border bg-card text-xs"
+                      className="border-border bg-card flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs"
                     >
                       <tech.icon className="h-3 w-3" />
                       {tech.name}
@@ -80,10 +81,7 @@ const Projects = () => {
                   ))}
                 </div>
                 <Button asChild variant="outline" className="w-full sm:w-auto">
-                  <Link
-                    href="https://doc-juri.vercel.app/authentication"
-                    target="_blank"
-                  >
+                  <Link href="https://www.docjuri.com.br/" target="_blank">
                     Visitar projeto <ExternalLink className="ml-1 h-3 w-3" />
                   </Link>
                 </Button>
@@ -95,30 +93,34 @@ const Projects = () => {
 
       {/* Outros projetos */}
       <div>
-        <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
+        <p className="text-muted-foreground mb-4 text-xs tracking-widest uppercase">
           Outros projetos
         </p>
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid gap-6 sm:grid-cols-2">
           <Card className="overflow-hidden">
-            <div className="relative aspect-video">
-              <Image
-                src="/clincontrol.png"
-                alt="ClinControl — sistema de gestão clínica"
-                fill
-                className="object-cover"
-              />
+            <div className="p-5">
+              <div className="relative aspect-video">
+                <Image
+                  src="/clincontrol.png"
+                  alt="ClinControl — sistema de gestão clínica"
+                  fill
+                  className="rounded-xl object-cover"
+                />
+              </div>
             </div>
-            <CardContent className="p-5 space-y-3">
+            <CardContent className="space-y-3 p-5">
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold">ClinControl</h3>
                 <Badge variant="secondary">Em desenvolvimento</Badge>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Sistema completo de gestão clínica com prontuário eletrônico,
                 agendamento online e dashboard analítico para gestores.
               </p>
             </CardContent>
           </Card>
+
+          <BentoGridDemo />
         </div>
       </div>
     </section>

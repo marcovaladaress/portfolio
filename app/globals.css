@@ -145,6 +145,16 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+    font-weight: 600;
+  }
+  p {
+    @apply leading-relaxed;
   }
 }
 
