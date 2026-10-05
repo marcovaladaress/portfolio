@@ -21,7 +21,7 @@ const items = [
   {
     title: "Microsoft",
     description:
-      "Projeto de estudo inspirado na identidade visual da Microsoft.",
+      "Página inspirada na identidade visual da Microsoft, feita em HTML e CSS no DevClub.",
     header: (
       <Image
         src="/microsoft.png"
@@ -31,13 +31,12 @@ const items = [
         className="h-full w-full rounded-xl object-cover"
       />
     ),
-    image: "/microsoft.png",
     link: "https://marcovaladaress.github.io/Microsoft-DevClub/",
   },
   {
     title: "WebAI",
     description:
-      "Projeto de estudo focado em uma interface moderna, minimalista e responsiva.",
+      "Interface em React com useState e useEffect, baseada em um template para estudo.",
     header: (
       <Image
         src="/Wb.png"
@@ -52,7 +51,7 @@ const items = [
   {
     title: "NFT Project",
     description:
-      "Projeto de estudo focado em uma interface moderna, minimalista e responsiva.",
+      "Landing page de coleção NFT em HTML e CSS, com animações e layout responsivo.",
     header: (
       <Image
         src="/NftProject.png"
@@ -67,7 +66,7 @@ const items = [
   {
     title: "Quantech",
     description:
-      "Projeto de estudo focado em uma interface moderna, minimalista e responsiva.",
+      "Site institucional de uma empresa de TI, publicado na Vercel.",
     header: (
       <Image
         src="/quantech.png"
@@ -82,7 +81,7 @@ const items = [
   {
     title: "Agência Brn",
     description:
-      "Projeto de estudo focado em uma interface moderna, minimalista e responsiva.",
+      "Site de agência em HTML e CSS, com foco em layout responsivo.",
     header: (
       <Image
         src="/brn.png"
