@@ -1,95 +1,68 @@
-import {
-  Globe,
-  LayoutTemplate,
-  ShoppingBag,
-  FileText,
-  ExternalLink,
-} from "lucide-react";
+import { docjuri, profile } from "@/lib/profile";
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-
-const services = [
-  {
-    icon: Globe,
-    title: "Plataformas SaaS",
-    description: "Multi-tenant, autenticação, permissões e integrações",
-  },
-  {
-    icon: LayoutTemplate,
-    title: "Landing Pages",
-    description: "Alta conversão, performance e design premium",
-  },
-  {
-    icon: ShoppingBag,
-    title: "E-commerce",
-    description: "Catálogo, carrinho, pagamentos e painel admin",
-  },
-  {
-    icon: FileText,
-    title: "Blogs & CMS",
-    description: "Conteúdo dinâmico, SEO e painel editorial",
-  },
-];
 
 const About = () => {
   return (
-    <section id="about" className="border-border border-t">
-      <div className="container mx-auto px-5 py-20">
-        <div className="grid items-start gap-16 md:grid-cols-[1fr_340px]">
-          {/* Narrativa */}
-          <div className="space-y-8">
-            <p className="text-muted-foreground text-xs tracking-widest uppercase">
-              Sobre mim
+    <section id="about" className="container mx-auto px-5 py-24">
+      <div className="grid items-center gap-16 md:grid-cols-[1fr_380px]">
+        <div className="glow space-y-6">
+          <h2 className="text-3xl leading-tight text-balance md:text-5xl">
+            Oi, eu sou o Marco.{" "}
+            <span className="text-muted-foreground">
+              Desenvolvedor Full Stack.
+            </span>
+          </h2>
+
+          <div className="text-muted-foreground max-w-xl space-y-4 text-[15px]">
+            <p>
+              Trabalho com Next.js, React, TypeScript e PostgreSQL. Construí
+              três sistemas completos no ecossistema Next.js, entre eles o
+              DocJuri, um SaaS jurídico multi-tenant de gestão de contratos.
+              Hoje desenvolvo uma API REST em Node.js com Fastify, Zod e
+              Swagger, consumida por um front-end Next.js.
             </p>
-
-            <div className="space-y-5">
-              <h2 className="text-3xl font-semibold tracking-tight">
-                Construo produtos digitais do zero — da arquitetura à interface
-              </h2>
-
-              <p className="text-muted-foreground text-[15px] leading-relaxed">
-                Sou desenvolvedor Full Stack Jr com foco em transformar ideias
-                em produtos reais. Não me limito a um único tipo de produto — já
-                entreguei plataformas SaaS, landing pages.
-              </p>
-
-              <blockquote className="border-primary text-muted-foreground border-l-2 pl-4 text-[15px] italic">
-                &quot;Meu produto mais concreto até hoje é o DocJuri —
-                plataforma multi-tenant para escritórios jurídicos, em produção
-                com cliente ativo.&quot;
-              </blockquote>
-
-              <p className="text-muted-foreground text-[15px] leading-relaxed">
-                Trabalho com Next.js, TypeScript e Node.js, e me preocupo tanto
-                com a experiência do usuário quanto com a arquitetura por baixo.
-                Cada projeto começa com o problema real, não com a tecnologia.
-              </p>
-            </div>
+            <p>
+              Antes da tecnologia, trabalhei 2 anos e 4 meses em obras de
+              infraestrutura, com medição de produção e controle de materiais.
+              Foi lá que aprendi como operações reais geram dados e regras de
+              negócio, e é por elas que começo cada projeto.
+            </p>
           </div>
 
-          {/* O que construo */}
-          <div className="space-y-4">
-            <p className="text-muted-foreground text-xs tracking-widest uppercase">
-              O que construo
-            </p>
-            <div className="flex flex-col gap-3">
-              {services.map((service) => (
-                <div
-                  key={service.title}
-                  className="border-border bg-card flex items-start gap-3 rounded-xl border p-4"
-                >
-                  <div className="bg-primary/10 mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg">
-                    <service.icon className="text-primary h-4 w-4" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium">{service.title}</p>
-                    <p className="text-muted-foreground mt-0.5 text-xs leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <dl className="grid max-w-sm grid-cols-3 gap-4 pt-2">
+            {docjuri.numbers.map((stat) => (
+              <div key={stat.label} className="flex flex-col-reverse">
+                <dt className="text-muted-foreground text-xs">{stat.label}</dt>
+                <dd className="font-display text-primary text-2xl">
+                  {stat.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+
+          <Link
+            href={profile.linkedin}
+            target="_blank"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center gap-2 rounded-full px-6 py-3 text-xs font-semibold tracking-widest uppercase transition-colors"
+          >
+            Ver perfil no LinkedIn
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-[320px] md:max-w-none">
+          {/* contornos decorativos da referência */}
+          <span className="border-primary/70 absolute -top-4 -right-6 h-6 w-20 rounded-full border" />
+          <span className="border-primary/70 absolute bottom-10 -left-5 h-28 w-8 rounded-full border" />
+          <Image
+            src={profile.avatar}
+            alt={`Foto de ${profile.name}`}
+            width={460}
+            height={460}
+            className="aspect-[4/5] w-full rounded-3xl object-cover grayscale"
+          />
         </div>
       </div>
     </section>
