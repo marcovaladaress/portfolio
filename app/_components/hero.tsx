@@ -1,4 +1,3 @@
-import { profile } from "@/lib/profile";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -10,7 +9,7 @@ const Hero = () => {
         Desenvolvedor Full Stack
       </p>
 
-      <h1 className="glow mt-8 max-w-6xl text-8xl leading-[1.03] font-semibold text-balance sm:text-5xl md:text-8xl">
+      <h1 className="glow mt-8 max-w-6xl text-5xl leading-[1.03] font-semibold text-balance sm:text-6xl md:text-8xl">
         Transformo processos manuais em software
       </h1>
 
